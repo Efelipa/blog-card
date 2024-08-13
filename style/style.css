@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'Figtree';
+    src:url(/assets/fonts/Figtree-VariableFont_wght.ttf);
+    font-style: italic;
+}
+
+:root {
+    /* Screen size */
+    --mobile_screen: 375px;
+    --desktop_screen: 1440px;
+    /* Colors */
+    --yellow: hsl(47, 88%, 63%);
+    --white: hsl(0, 0%, 100%);
+    --gray_500: hsl(0, 0%, 42%);
+    --gray_950: hsl(0, 0%, 7%);
+    --regular-size: 16px;
+    /* Typography */
+}
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Figtree';
+    font-size: var(--regular-size);
+}
+#main {
+    min-height: 100vh;
+    background: var(--yellow);
+    display: grid;
+    place-items: center;
+}
+/* Card section */
+.card {
+    width: var(--mobile_screen);
+    padding: 20px;
+    background: var(--white);
+    border: 1px solid var(--gray_950);
+    border-radius: 20px;
+    -webkit-box-shadow: 7px 10px 0px -1px var(--gray_950);
+    -moz-box-shadow: 7px 10px 0px -1px var(--gray_950);
+    box-shadow: 7px 10px 0px -1px var(--gray_950);
+    display: grid;
+    gap: 10px;
+    place-items: center;
+}
+/* Card header */
+.card-header {
+    width: 100%;
+    object-fit: cover;
+}
+.card-header .image{
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    margin-bottom: 20px;
+}
+.card-header .labels {
+    display: flex;
+    flex-flow: column;
+    gap: 8px;
+}
+.labels .yellow-ticket {
+    width: 25%;
+    background-color: var(--yellow);
+    text-align: center;
+    padding: 2px 3px;
+    font-weight: bold;
+}
+.labels .date {
+    color: var(--gray_500);
+    font-weight: 600;
+}
+/* Card body */
+.card-body {
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+}
+.card-body .title h3{
+    font-size: 22px;
+    margin: 0;
+    font-weight: bold;
+}
+.card-body .title h3:hover {
+    color: var(--yellow);
+    cursor: pointer;
+}
+.card-body .info p {
+    margin: 0;
+    color: var(--gray_500);
+    
+}
+/* Card footer */
+.card-footer {
+    width: 100%;
+}
+.card-footer .author {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 10px;
+    img {
+        width: 10%;
+        height: 10%;
+        align-self: center;
+    }
+    p {
+        font-weight: bold;
+        color: var(--gray_950);
+        align-self: center;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .card {
+        width: calc(var(--mobile_screen) - 50px);
+        transition: .5s ease-in-out;
+    }
+    
+}
+
+.attribution {
+    color: var(--gray_950);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
